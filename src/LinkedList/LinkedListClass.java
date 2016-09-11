@@ -91,5 +91,21 @@ public class LinkedListClass {
         reverseList(next1, curr);
         return head;
 	}
+	
+	public void rotate(Node elem, int val){
+		if(val == 0){
+			return;
+		}
+		Node cur = head;
+		Node start = head;
+		for(int i = 0;i < val; i++){
+			cur = cur.next;
+		}
+		Node kNode = cur;
+		head = cur.next;
+		last.next = start;
+		kNode.next = null;
+		last = kNode;
+	}
 }						
 
